@@ -18,3 +18,14 @@ g++ teaching-learning.cpp -o tlbo
 ./tlbo
 ```
 
+
+## 2º Phase. Parallelization
+
+In this phase I use *OpenOMP* to obtain the algorithm TLBO can execute in multiple threads. More information of [OpenOMP](https://www.openmp.org/spec-html/5.0/openmp.html).
+
+### How to execute
+
+```bash
+g++ teaching-learning-omp.cpp -o tlbo-omp -fopenmp
+./tlbo-omp
+```

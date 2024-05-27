@@ -3,7 +3,6 @@
 #include <cstdio>
 #include <time.h>
 #include <sys/time.h>
-#include <omp.h>
 
 #define MAX_SUBJECT 5
 #define MAX_NUMBER_SOLUTION 9
@@ -243,14 +242,6 @@ cout << "NUM EVALUATIONS : " << num_evaluations <<  endl;
 
 int main() {
     srand(time(NULL));
-
-    double Tini, Tfin = 0;
-    Tini = omp_get_wtime(); // Obtener el tiempo inicial    
-    tlbo(); // Calcular el programa de los estudiantes
-    Tfin = omp_get_wtime();  // Obtener el tiempo final y acumular el tiempo tardado
-
-    // Mostrar el tiempo tardado en la ejecución
-    cout << "TIME WITH " << 1 << " THREAD(s): " << 1000 * (Tfin - Tini) << " miliseconds" << endl;
-    
+    tlbo(); 
     return 0;
 }
